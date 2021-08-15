@@ -1,0 +1,103 @@
+
+.nav {
+    grid-area: n;
+    background: #f6d768;
+    box-sizing: border-box;
+    margin-left: 0;
+    overflow-y: scroll;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navCard {
+    background-color: #fff;
+    box-shadow: 0 8px 30px rgb(0 0 0 / 5%);
+    padding-bottom: 0.25rem;
+    padding-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 15px;
+}
+
+.navCaption {
+    font-weight: 600;
+    margin-bottom: 5px;
+    padding-left: 25px;
+    white-space: nowrap;
+    -webkit-transition: padding 0.25s;
+    -o-transition: padding 0.25s;
+    transition: padding 0.25s;
+    color: #adb5bd;
+    font-size: 12px;
+}
+
+.scrollBar {
+    position: fixed;
+    top: 0;
+    flex-shrink: 0;
+    width: 280px;
+    height: 100vh;
+    overflow: hidden;
+    background: transparent;
+    /*-webkit-transition: width 0.25s;*/
+    /*-o-transition: width 0.25s;*/
+    /*transition: width 0.25s;*/
+    padding-top: calc(90px + 6px);
+    /*z-index: -1;*/
+    /*box-shadow: 0 8px 30px rgb(0 0 0 / 5%) ;*/
+}
+
+.item {
+    margin-top: 10px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 25px;
+}
+
+.item a {
+    text-decoration: none;
+    color: #888;
+}
+
+.item a.activeLink {
+    color: #3e3e3e;
+}
+
+.iconRound {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff
+}
+
+.profileIcon {
+    background: linear-gradient(135deg, #05f, #09f);
+    margin-right: 1rem;
+}
+
+.newsfeedIcon {
+    background: linear-gradient(to right, #0575e6, #021b79);
+    margin-right: 1rem;
+}
+
+.messengerIcon {
+    background: linear-gradient(to right, #f2994a, #f2c94c);
+    margin-right: 1rem;
+}
+
+.musicIcon {
+    background: linear-gradient(to right, #ee0979, #ff6a00);
+    margin-right: 1rem;
+}
+
+.settingsIcon {
+    background: linear-gradient(to right, #6a6a6c, #6a6a71);
+    margin-right: 1rem;
+}
+
+
+

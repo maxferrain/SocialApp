@@ -1,14 +1,28 @@
+import {Route} from "react-router-dom"
+import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar/Navbar";
+import Profile from "./components/Profile/Profile";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import './App.css';
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import Profile from "./components/Profile";
 
-function App() {
+function App(props) {
     return (
         <div className='app-wrapper'>
-            <Header/>
+            <Header hi='ho'/>
             <Navbar/>
-            <Profile/>
+            <div className='app-wrapper-content'>
+                <Route
+                    path='/dialogs'
+                    render={() => <DialogsContainer/>}
+                />
+                <Route
+                    path='/profile'
+                    render={() => <Profile/>}
+                />
+                <Route path='/feed'/>
+                <Route path='/music'/>
+                <Route path='/settings'/>
+            </div>
         </div>
     );
 }

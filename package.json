@@ -2,7 +2,7 @@
   "name": "react-01",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://maxferrain.github.io/demo-ciao",
+  "homepage": "https://maxferrain.github.io/SocialApp",
   "dependencies": {
     "@iconify-icons/ant-design": "^1.1.0",
     "@testing-library/jest-dom": "^5.11.4",

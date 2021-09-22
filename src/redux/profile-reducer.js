@@ -1,5 +1,9 @@
+import {profileAPI} from "../api/api";
+
 const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+const SET_USER_PROFILE = 'SET-USER-PROFILE'
+const SET_STATUS = 'SET-STATUS'
+const DELETE_POST = 'DELETE-POST'
 
 const initialState = {
     posts:
@@ -9,7 +13,8 @@ const initialState = {
             {id: 3, message: 'Lorem ipsum dolor sit amet, consectetur adipisicing', likesCount: 236},
             {id: 4, message: 'Lorem ipsum dolor sit amet.', likesCount: 18},
         ],
-    newPostText: 'SampleText123'
+    profile: null,
+    status: ''
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -17,35 +22,48 @@ const profileReducer = (state = initialState, action) => {
         case ADD_POST: {
             let newPost = {
                 id: 5,
-                message: state.newPostText,
+                message: action.newPostText,
                 likesCount: 0
             }
-            let stateCopy = {...state}
-            stateCopy.posts = [...state.posts]
-            stateCopy.posts.push(newPost)
-            stateCopy.newPostText = ''
-            return stateCopy
+            return {...state, posts: [...state.posts, newPost]}
         }
-
-        case UPDATE_NEW_POST_TEXT: {
-            let stateCopy = [...state]
-            stateCopy.newPostText = action.newText
-            return stateCopy
+        case SET_USER_PROFILE: {
+            return {...state, profile: action.profile}
+        }
+        case SET_STATUS: {
+            return {...state, status: action.status}
+        }
+        case DELETE_POST: {
+            return {...state, posts: state.posts.filter(p => p.id !== action.postId)}
         }
         default:
             return state
     }
 }
 
-export const addPostCreator = () => {
-    return {
-        type: ADD_POST
+export const addPostCreator = (newPostText) => ({type: ADD_POST, newPostText})
+export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
+export const setStatus = (status) => ({type: SET_STATUS, status})
+export const deletePost = (postId) => ({type: DELETE_POST, postId})
+
+// thunk
+
+export const getProfile = (userId) => {
+    return async (dispatch) => {
+        let response = await profileAPI.getProfile(userId)
+        dispatch(setUserProfile(response.data))
     }
 }
 
-export const updateNewPostCreator = (text) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT, newText: text
+export const getStatus = (userId) => async (dispatch) => {
+    let response = await profileAPI.getStatus(userId)
+    dispatch(setStatus(response.data))
+}
+
+export const updateStatus = (status) => async (dispatch) => {
+    let response = await profileAPI.updateStatus(status)
+    if (response.data.resultCode === 0) {
+        dispatch(setStatus(status))
     }
 }
 

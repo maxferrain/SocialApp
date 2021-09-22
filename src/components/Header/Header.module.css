@@ -41,3 +41,12 @@
     width: 40px;
     vertical-align: middle;
 }
+
+.loginBlock {
+    float: right;
+}
+
+.loginBlock a {
+    color: #3e3e3e;
+    text-decoration: none;
+}

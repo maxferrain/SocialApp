@@ -1,5 +1,4 @@
 const SEND_MESSAGE = 'SEND-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
 
 const initialState = {
     dialogs:
@@ -16,39 +15,22 @@ const initialState = {
         {id: 3, message: 'The HTML Content Division element'},
         {id: 4, message: 'XML tag has empty body'},
         {id: 5, message: 'Bye!'},
-    ],
-    newMessageText: ''
+    ]
 }
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SEND_MESSAGE:
-            let message = {
-                id: 6,
-                message: state.newMessageText
+        case SEND_MESSAGE: {
+            return {
+                ...state,
+                messages: [...state.messages, {id: 6, message: action.newMessageBody}]
             }
-            state.messages.push(message)
-            state.newMessageText = ''
-            return state
-
-        case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessageText = action.newText
-            return state
+        }
         default:
             return state
     }
 }
 
-export const sendMessageCreator = () => {
-    return {
-        type: SEND_MESSAGE
-    }
-}
-
-export const updateNewMessageCreator = (text) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_TEXT, newText: text
-    }
-}
+export const sendMessageCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody})
 
 export default dialogsReducer

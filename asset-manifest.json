@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/SocialApp/static/css/main.a6b113e6.chunk.css",
-    "main.js": "/SocialApp/static/js/main.0e747f50.chunk.js",
-    "main.js.map": "/SocialApp/static/js/main.0e747f50.chunk.js.map",
+    "main.js": "/SocialApp/static/js/main.b931b0e3.chunk.js",
+    "main.js.map": "/SocialApp/static/js/main.b931b0e3.chunk.js.map",
     "runtime-main.js": "/SocialApp/static/js/runtime-main.96625272.js",
     "runtime-main.js.map": "/SocialApp/static/js/runtime-main.96625272.js.map",
     "static/js/2.1be6822c.chunk.js": "/SocialApp/static/js/2.1be6822c.chunk.js",
@@ -28,6 +28,6 @@
     "static/js/runtime-main.96625272.js",
     "static/js/2.1be6822c.chunk.js",
     "static/css/main.a6b113e6.chunk.css",
-    "static/js/main.0e747f50.chunk.js"
+    "static/js/main.b931b0e3.chunk.js"
   ]
 }

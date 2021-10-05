@@ -1,13 +1,32 @@
 .paginator {
-    margin: 10px;
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
 }
 
 .pageNumber {
-    padding: 7px;
-    border: 1px solid gray;
+    padding: 10px 18px 5px;
 }
 
-.selectedPage {
-    font-weight: bold;
-    border-color: black;
+.pageNumber, .button {
+    cursor: pointer;
+    display: inline-block;
+    position: center;
 }
+.button {
+    margin: 10px;
+    padding: 13px 18px 5px;
+    border: none;
+}
+
+.selectedPage, .button {
+    /*font-weight: bold;*/
+    /*border-color: black;*/
+
+    background-color: #999898;
+    color: #fff;
+    font-weight: bold;
+}
+
